@@ -1,0 +1,32 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table agents {
+  id                  integer [primary key]
+  name                text
+  // System info
+  system_name         text
+  hostname            text 
+  os                  text
+  os_version          text
+  kernel_version      text
+  cpu                 text
+}
+
+Table beacons {
+  id                  integer [primary key]
+  agent_id            integer
+  timestamp           datetime
+}
+
+Table commands {
+  id                  integer [primary key]
+  agent_id            integer
+  command_type        integer
+  cmd                 text
+  status              text
+  result              text
+}
+
+Ref: commands.agent_id > agents.id
+Ref: beacons.agent_id > agents.id
