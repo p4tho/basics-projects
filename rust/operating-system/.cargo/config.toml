@@ -1,0 +1,13 @@
+[unstable]
+json-target-spec = true
+build-std-features = ["compiler-builtins-mem"]
+build-std = ["core", "compiler_builtins"]
+
+[build]
+target = "x86_64-blog_os.json"
+
+# Applied to all targets whose "os" field is set to "none"
+# "runner" specifies command should be invoked for "cargo run"
+# Does compiling for Rust and post-build link operations then uses compiled bootimage in a QEMU VM
+[target.'cfg(target_os = "none")']
+runner = "bootimage runner"
