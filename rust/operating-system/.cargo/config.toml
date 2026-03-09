@@ -11,3 +11,8 @@ target = "x86_64-blog_os.json"
 # Does compiling for Rust and post-build link operations then uses compiled bootimage in a QEMU VM
 [target.'cfg(target_os = "none")']
 runner = "bootimage runner"
+
+[[bin]]
+name = "operating-system"
+test = true
+bench = false
