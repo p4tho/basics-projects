@@ -1,0 +1,19 @@
+[package]
+name = "wgpu-fundamentals"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cgmath = "0.18"
+winit = { version = "0.30", features = ["android-native-activity"] }
+env_logger = "0.10"
+log = "0.4"
+pollster = "0.3"
+wgpu = "29.0.1"
+bytemuck = { version = "1.24", features = [ "derive" ] } # NEW!
+anyhow = "1.0.102"
+
+[dependencies.image]
+version = "0.24"
+default-features = false
+features = ["png", "jpeg"]
